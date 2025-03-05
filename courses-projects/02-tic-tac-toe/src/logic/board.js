@@ -1,5 +1,11 @@
 import { WINNER_COMBOS } from '../constants.js';
 
+/**
+ * 
+ * @param {Array} boardToCheck 
+ * @param {Number} index 
+ * @returns {String | null} winner or null
+ */
 export const checkWinnerFrom = (boardToCheck, index) => {
   const combosToValidate = WINNER_COMBOS.filter(combo => combo.some(value => value === index));
   
