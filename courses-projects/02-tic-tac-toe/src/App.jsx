@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState } from 'react';
 import confetti from 'canvas-confetti';
 import Square from './components/Square.jsx';
-import WinnerModal from "./components/WinnerModal.jsx";
+import WinnerModal from './components/WinnerModal.jsx';
 import { TURNS } from './constants.js';
-import { checkWinnerFrom, checkEndGame } from "./logic/board.js";
-import { resetGameStorage, retriveBoardFromStorage, retriveTurnFromStorage, saveGameToStorage } from "./logic/storage/index.js";
+import { checkWinnerFrom, checkEndGame } from './logic/board.js';
+import { resetGameStorage, retriveBoardFromStorage, retriveTurnFromStorage, saveGameToStorage } from './logic/storage/index.js';
 
 function App() {
   const [board, setBoard]   = useState( () => retriveBoardFromStorage() ?? Array(9).fill(null) );
@@ -66,7 +66,7 @@ function App() {
             })
         }
       </section>
-      <section className="turn">
+      <section className='turn'>
         <Square isSelected={ turn === TURNS.X }>
           { TURNS.X }
         </Square>
