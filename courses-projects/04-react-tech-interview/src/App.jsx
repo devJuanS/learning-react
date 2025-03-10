@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import './App.css';
+import { getRandomFact } from './services/facts';
+import { getThreeFirstWords, sliceTextFact } from './logic/text';
+import { getRandomImageUrl } from './services/image';
 
-const CAT_FACT_URL = 'https://catfact.ninja/fact';
-const CAT_IMAGE_BASE_URL = 'https://cataas.com/cat/says/';
+import './App.css';
 
 export function App() {
   const [fact, setFact] = useState('initial fact before fetching');
@@ -10,47 +11,17 @@ export function App() {
 
   // fetch a random cat fact
   useEffect(() => {
-    fetch(CAT_FACT_URL)
-      .then((response) => {
-        if (!response.ok) throw new Error('Error fetching fact.');
-        return response.json();
-      })
-      .then((data) => {
-        const { fact } = data;
-        setFact(fact);
-      });
+    getRandomFact().then((newFact) => setFact(newFact));
   }, []);
 
   // fetch url from a random cat with the first three words from the fact
   useEffect(() => {
-    if (!fact) return;
-
     const firstThreeWordFact = getThreeFirstWords(fact) + '...';
 
-    fetch(`${CAT_IMAGE_BASE_URL + firstThreeWordFact}?json=true`)
-      .then((response) => {
-        if (!response.ok) throw new Error('Error fetching image url.');
-        return response.json();
-      })
-      .then((response) => setImageUrl(response.url));
+    getRandomImageUrl(firstThreeWordFact).then((newImageUrl) =>
+      setImageUrl(newImageUrl)
+    );
   }, [fact]);
-
-  /**
-   *
-   * @param {String} text
-   * @returns {String}
-   */
-  const getThreeFirstWords = (text) => text.split(' ', 3).join(' ');
-
-  /**
-   *
-   * @param {String} text
-   * @returns {String}
-   */
-  const sliceTextFact = (text) => {
-    const firstWordsLength = getThreeFirstWords(text).length;
-    return text.slice(firstWordsLength);
-  };
 
   const factSliced = sliceTextFact(fact);
 
