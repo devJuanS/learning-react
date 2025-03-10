@@ -25,6 +25,9 @@ export function App() {
 
   const factSliced = sliceTextFact(fact);
 
+  const handleButtonCLick = () =>
+    getRandomFact().then((newFact) => setFact(newFact));
+
   return (
     <main>
       <h3>Cat Fact Image | React app</h3>
@@ -35,6 +38,7 @@ export function App() {
         />
       )}
       {fact && <p>...{factSliced}</p>}
+      <button onClick={handleButtonCLick}>Get new fact</button>
     </main>
   );
 }
