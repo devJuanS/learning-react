@@ -1,32 +1,18 @@
-import { useEffect, useState } from 'react';
-import { getRandomFact } from './services/facts';
-import { getThreeFirstWords, sliceTextFact } from './logic/text';
-import { getRandomImageUrl } from './services/image';
+import { useCatFact } from './hooks/useCatFact';
+import { useCatImage } from './hooks/useCatImage';
+import { sliceTextFact } from './logic/text';
 
 import './App.css';
 
 export function App() {
-  const [fact, setFact] = useState('initial fact before fetching');
-  const [imageUrl, setImageUrl] = useState();
-
-  // fetch a random cat fact
-  useEffect(() => {
-    getRandomFact().then((newFact) => setFact(newFact));
-  }, []);
-
-  // fetch url from a random cat with the first three words from the fact
-  useEffect(() => {
-    const firstThreeWordFact = getThreeFirstWords(fact) + '...';
-
-    getRandomImageUrl(firstThreeWordFact).then((newImageUrl) =>
-      setImageUrl(newImageUrl)
-    );
-  }, [fact]);
+  const { fact, refreshFact } = useCatFact();
+  const { imageUrl } = useCatImage({ fact });
 
   const factSliced = sliceTextFact(fact);
 
-  const handleButtonCLick = () =>
-    getRandomFact().then((newFact) => setFact(newFact));
+  const handleButtonCLick = async () => {
+    refreshFact();
+  };
 
   return (
     <main>

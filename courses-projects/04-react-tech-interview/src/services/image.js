@@ -26,6 +26,6 @@ export const getRandomImageUrl = async (text) => {
 
   const response = await fetch(`${CAT_IMAGE_BASE_URL + text}?json=true`);
   if (!response.ok) throw new Error('Error fetching image url.');
-  const response_1 = await response.json();
-  return response_1.url;
+  const { url } = await response.json();
+  return url;
 };
