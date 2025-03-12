@@ -1,0 +1,48 @@
+{
+  "Search": [
+    {
+      "Title": "The Catholic School",
+      "Year": "2021",
+      "imdbID": "tt10345782",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BZGY0OTNiYmEtYzI5OC00OGQ2LTg2ZjEtODE3ZWU1MzFjZGZlXkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    {
+      "Title": "The Good Catholic",
+      "Year": "2017",
+      "imdbID": "tt4721404",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BZDE4OGY5YjAtZjRiOS00NTFmLTkyOTEtZWVlNzRjNmQzYjBiXkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    {
+      "Title": "Louis C.K. Learns About the Catholic Church",
+      "Year": "2007",
+      "imdbID": "tt2306280",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BYjQ2NTEwZjEtM2EzYS00NzJhLWEzYTItOGZlNjgwYjUwZjk3XkEyXkFqcGdeQXVyMTEzNzczMA@@._V1_SX300.jpg"
+    },
+    {
+      "Title": "Richard Jeni: A Good Catholic Boy",
+      "Year": "1997",
+      "imdbID": "tt0236681",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BN2QyZWRlYzYtZTgxMy00ODlmLWI5ZjYtYzdjMDllNWVkMWFhXkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    {
+      "Title": "Tales from the Catholic Church of Elvis!",
+      "Year": "2009",
+      "imdbID": "tt1082876",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMTMzMzA3Nzc0NF5BMl5BanBnXkFtZTcwOTE2Mjc1Mg@@._V1_SX300.jpg"
+    },
+    {
+      "Title": "Tolkien's the Lord of the Rings: A Catholic Worldview",
+      "Year": "2011",
+      "imdbID": "tt1956682",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BNWVhODlhOGQtNDE2Ny00NmJlLTg2NDgtMzM0NWNmN2VhZTIzXkEyXkFqcGdeQXVyMTI4MjY2MQ@@._V1_SX300.jpg"
+    }
+  ],
+  "totalResults": "78",
+  "Response": "True"
+  }

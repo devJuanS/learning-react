@@ -1,0 +1,20 @@
+.movie-search__page {
+  padding-block: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.movie-search__form {
+  margin-block-end: 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-search__form input {
+  max-width: unset;
+}
+
+.movie-search__grid {
+  list-style: none;
+}
