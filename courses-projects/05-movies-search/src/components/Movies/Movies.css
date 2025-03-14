@@ -1,0 +1,12 @@
+.movie__poster {
+  width: 100%;
+}
+
+.movie__title {
+  margin-block: 0;
+}
+
+.movie__year {
+  color: #c0c0c0;
+  font-size: 0.9rem;
+}
