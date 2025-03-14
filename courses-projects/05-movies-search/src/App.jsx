@@ -1,34 +1,45 @@
 import './App.css';
 import { Movies } from './components/Movies/Movies';
-import { mapperMovieToApp } from './mapper/mapperMovieToLocal';
-import responseMovies from './mocks/response-movies.json';
-// import responseMovies from './mocks/no-movie-found.json';
+import { useMovies } from './hooks/useMovies';
+import { useSearch } from './hooks/useSearch';
 
 function App() {
-  const hasMovies = responseMovies.Response === 'True';
+  const { movies } = useMovies([]);
+  const { search, updateSearch, error } = useSearch();
 
-  const movies = hasMovies
-    ? responseMovies.Search.map((movie) => mapperMovieToApp(movie))
-    : null;
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log({ search });
+  };
+
+  const handleChange = (event) => {
+    const newSearch = event.target.value;
+    if (newSearch.startsWith(' ')) return;
+    updateSearch(newSearch);
+  };
 
   return (
     <div className='movie-search__page'>
       <header>
         <h3>Movie Search React App</h3>
-        <form className='movie-search__form'>
+        <form onSubmit={handleSubmit} className='movie-search__form'>
           <input
+            style={{
+              border: '1px solid transparent',
+              borderColor: error ? 'red' : 'transparent',
+            }}
+            onChange={handleChange}
+            value={search}
+            name='search'
             type='text'
             placeholder='God is not Dead!, The Lord of the Rings ...'
           />
           <button type='submit'>Search</button>
         </form>
+        {error && <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>}
       </header>
       <main>
-        {hasMovies ? (
-          <Movies movies={movies} />
-        ) : (
-          <span>No result to show</span>
-        )}
+        <Movies movies={movies} />
       </main>
     </div>
   );

@@ -16,5 +16,10 @@
 }
 
 .movie-search__grid {
+  margin-inline: 20px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-gap: 1rem;
   list-style: none;
 }
