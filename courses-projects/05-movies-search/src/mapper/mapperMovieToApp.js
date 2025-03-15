@@ -1,3 +1,8 @@
+/**
+ *
+ * @param {Object} movie
+ * @returns {Object}
+ */
 export const mapperMovieToApp = (movie) => {
   return {
     id: movie.imdbID,

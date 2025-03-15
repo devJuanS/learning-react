@@ -4,12 +4,12 @@ import { useMovies } from './hooks/useMovies';
 import { useSearch } from './hooks/useSearch';
 
 function App() {
-  const { movies } = useMovies([]);
   const { search, updateSearch, error } = useSearch();
+  const { movies, getMovies, loading } = useMovies({ search });
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log({ search });
+    getMovies({ search });
   };
 
   const handleChange = (event) => {
@@ -39,7 +39,7 @@ function App() {
         {error && <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>}
       </header>
       <main className='movie-search__result'>
-        <Movies movies={movies} />
+        {loading ? <p>Loading movies...</p> : <Movies movies={movies} />}
       </main>
     </div>
   );
