@@ -19,7 +19,7 @@ function App() {
   };
 
   return (
-    <div className='movie-search__page'>
+    <div className='movie-search-app'>
       <header>
         <h3>Movie Search React App</h3>
         <form onSubmit={handleSubmit} className='movie-search__form'>
@@ -38,7 +38,7 @@ function App() {
         </form>
         {error && <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>}
       </header>
-      <main>
+      <main className='movie-search__result'>
         <Movies movies={movies} />
       </main>
     </div>

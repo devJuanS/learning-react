@@ -1,4 +1,7 @@
-.movie-search__page {
+.movie-search-app {
+  width: 100%;
+  max-width: 800px;
+  margin-inline: auto;
   padding-block: 32px;
   display: flex;
   flex-direction: column;
@@ -15,11 +18,8 @@
   max-width: unset;
 }
 
-.movie-search__grid {
-  margin-inline: 20px;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-gap: 1rem;
-  list-style: none;
+.movie-search__result {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }

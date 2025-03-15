@@ -1,5 +1,15 @@
+.movie-search__grid {
+  width: 100%;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 2rem;
+  list-style: none;
+}
+
 .movie__poster {
   width: 100%;
+  border-radius: 8px;
 }
 
 .movie__title {
