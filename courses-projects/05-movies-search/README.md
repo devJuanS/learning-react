@@ -18,3 +18,20 @@
 
 - API: https://www.omdbapi.com
 - API key: get it from https://www.omdbapi.com/apikey.aspx
+
+## Solution to First Iteration Requirements
+
+- Avoid to perform the same search twice in a row.
+  Using the hooks `useRef` to save the previous search and compare it with the new submitted search.
+
+  ```js
+  export function useMovies({ search }) {
+    const previousSearch = useRef(search);
+
+    const getMovies = async () => {
+      ...
+      previousSearch.current = search;
+    }
+    ...
+  }
+  ```
