@@ -28,4 +28,3 @@ export function useSearch() {
 
   return { search, updateSearch, error };
 }
-67;

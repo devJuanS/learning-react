@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { searchMovies } from '../services/movies';
 // import withResults from '../mocks/response-movies.json';
 // import withoutResults from '../mocks/no-movie-found.json';
@@ -9,7 +9,7 @@ export function useMovies({ search }) {
   const [error, setError] = useState(null);
   const previousSearch = useRef(search); // Avoid refetching the same search
 
-  const getMovies = async () => {
+  const getMovies = useCallback(async ({ search }) => {
     if (previousSearch.current === search) return;
     try {
       setLoading(true);
@@ -22,7 +22,7 @@ export function useMovies({ search }) {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
   return { movies, getMovies, loading, errorMovies: error };
 }

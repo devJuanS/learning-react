@@ -1,6 +1,6 @@
 import { mapperMovieToApp } from '../mapper/mapperMovieToApp';
 
-const API_KEY = '5500a140';
+const API_KEY = import.meta.env.VITE_API_KEY;
 
 /**
  *
