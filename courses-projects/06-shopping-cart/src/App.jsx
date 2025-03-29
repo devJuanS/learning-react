@@ -1,32 +1,16 @@
+import { Footer } from './components/Footer';
+import { Header } from './components/Header';
+import { Products } from './components/Products';
 import initialProducts from './mocks/products.json';
-import './App.css';
+
+// const API_URI = 'https://fakestoreapi.com/products';
 
 function App() {
-  console.log(initialProducts);
   return (
     <>
-      <header>
-        <strong>Shopping Cart 🛒</strong>
-      </header>
-      <main>
-        <h2>Catalog of products</h2>
-        <ul className='products-grid'>
-          {initialProducts.map((product) => {
-            return (
-              <li key={product.id}>
-                <img
-                  className='product-thumbnail'
-                  src={product.image}
-                  alt={product.title}
-                />
-                <p className='product-title'>{product.title}</p>
-                <span>${product.price}</span>
-              </li>
-            );
-          })}
-        </ul>
-      </main>
-      <footer>devJuanS</footer>
+      <Header />
+      <Products products={initialProducts} />
+      <Footer />
     </>
   );
 }
