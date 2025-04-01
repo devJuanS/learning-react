@@ -12,4 +12,4 @@ Here is the projects done during the courses about React.
 | `03` | Mouse follower                    | `useEffect` `clean up effect`                         |    [View](courses-projects/03-mouse-follower/)    | _pending_ |
 | `04` | React Technical Interview         | `react` `API` `fetching` `custom hooks` `testing E2E` | [View](courses-projects/04-react-tech-interview/) | _pending_ |
 | `05` | Movie Search Technical Interview  | `API` `form manage` `useRef` `useMemo` `useCallback`  |    [View](courses-projects/05-movies-search/)     | _pending_ |
-| `06` | Shopping Cart Technical Interview | `useID` `useContext` `useReducer`                     |    [View](courses-projects/06-shopping-cart/)     | _pending_ |
+| `06` | Shopping Cart Technical Interview | `useId` `useContext` `useReducer`                     |    [View](courses-projects/06-shopping-cart/)     | _pending_ |

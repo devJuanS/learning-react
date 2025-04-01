@@ -5,3 +5,18 @@ header {
 header h1 {
   text-align: left;
 }
+
+.filters {
+  margin-block-end: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.filters div {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.filter__category select {
+  font: inherit;
+}
