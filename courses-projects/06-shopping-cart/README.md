@@ -11,7 +11,7 @@ Create an Ecommerce application where to filter products and manage a shopping c
 - [x] Show a list of products from a JSON.
 - [x] Add a filter by category.
 - [x] Add a filter by price.
-- [ ] Use the hook `useContext` to avoid passing needlessly props.
+- [x] Use the hook `useContext` to avoid passing needlessly props (avoiding prop drilling).
 
 ### Shopping cart
 

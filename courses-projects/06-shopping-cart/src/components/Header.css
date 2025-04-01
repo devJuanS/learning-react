@@ -12,6 +12,14 @@ header h1 {
   justify-content: space-between;
 }
 
+@media (width <= 580px) {
+  .filters {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
 .filters div {
   display: flex;
   gap: 0.5rem;
