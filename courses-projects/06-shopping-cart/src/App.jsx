@@ -4,6 +4,7 @@ import { Header } from './components/Header';
 import { Products } from './components/Products';
 import initialProducts from './mocks/products.json';
 import { useFilters } from './hooks/useFilters';
+import { Cart } from './components/Cart';
 
 // const API_URI = 'https://fakestoreapi.com/products';
 
@@ -16,6 +17,7 @@ function App() {
   return (
     <>
       <Header />
+      <Cart />
       <Products products={filteredProducts} />
       <Footer />
     </>
