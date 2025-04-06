@@ -15,8 +15,8 @@ Create an Ecommerce application where to filter products and manage a shopping c
 
 ### Shopping cart
 
-- [ ] Include the feature to add prodcuts to the cart.
-- [ ] Include the feature to delete products in the cart.
-- [ ] Include the feature to update the quantity of products in the cart.
-- [ ] Sincronize the changes from the cart with the products list.
+- [x] Include the feature to add prodcuts to the cart.
+- [x] Include the feature to delete products in the cart.
+- [x] Include the feature to update the quantity of products in the cart.
+- [x] Sincronize the changes from the cart with the products list.
 - [ ] Save in a local storage the cart to recovery it when reloads the page.

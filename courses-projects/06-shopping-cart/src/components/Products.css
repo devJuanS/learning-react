@@ -49,4 +49,11 @@
 }
 .product-info__button {
   grid-area: button;
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.product-info__button button {
+  padding-inline: 1em;
 }

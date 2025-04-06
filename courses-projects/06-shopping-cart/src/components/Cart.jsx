@@ -1,20 +1,27 @@
 import { useId } from 'react';
-import { CartIcon } from './Icons';
+import { CartIcon, ClearCartIcon } from './Icons';
 import './Cart.css';
 import { formatNumberToCurrency } from '../lib/helpers/formatNumberToCurrency';
+import { useCart } from '../hooks/useCart';
 
-function CartItem({ image, price, quantity, title }) {
+function CartItem({ product }) {
+  const { addToCart } = useCart();
+
+  const handleButtonClick = () => {
+    addToCart(product);
+  };
+
   return (
     <>
-      <img src={image} alt={title} />
+      <img src={product.image} alt={product.title} />
       <section className='item-info-grid'>
-        <p className='item-info__title'>{title}</p>
+        <p className='item-info__title'>{product.title}</p>
         <div className='item-info__price'>
-          <span>${formatNumberToCurrency(price)}</span>
+          <span>${formatNumberToCurrency(product.price)}</span>
         </div>
         <div className='item-info__btn-quantity'>
-          <small>Qty: {quantity}</small>
-          <button>+</button>
+          <small>Qty: {product.quantity}</small>
+          <button onClick={handleButtonClick}>+</button>
         </div>
       </section>
     </>
@@ -22,24 +29,8 @@ function CartItem({ image, price, quantity, title }) {
 }
 
 export function Cart() {
+  const { cart, clearCart } = useCart();
   const cartCheckboxId = useId();
-
-  const mockCart = [
-    {
-      id: 13,
-      image: 'https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg',
-      price: 599,
-      quantity: 1,
-      title: 'Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin',
-    },
-    {
-      id: 8,
-      image: 'https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg',
-      price: 10.99,
-      quantity: 1,
-      title: 'Pierced Owl Rose Gold Plated Stainless Steel Double',
-    },
-  ];
 
   return (
     <>
@@ -51,14 +42,21 @@ export function Cart() {
 
       <aside className='cart'>
         <ul>
-          {mockCart.map((product) => {
+          {cart.map((product) => {
             return (
               <li key={product.id}>
-                <CartItem {...product} />
+                <CartItem product={product} />
               </li>
             );
           })}
         </ul>
+        {cart.length ? (
+          <button onClick={clearCart}>
+            <ClearCartIcon />
+          </button>
+        ) : (
+          <span>Cart is empty</span>
+        )}
       </aside>
     </>
   );
